@@ -1,1 +1,1 @@
-# teres-fit-pp
+# teres-fit-app
