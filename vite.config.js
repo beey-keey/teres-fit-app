@@ -13,6 +13,7 @@ export default defineConfig({
     outDir: "dist", // Specify the output directory for the production build
     assetsDir: "", // Assets directory relative to outDir
     // You can add more build options as needed
+    base: "/teres-fit-app/",
   },
   resolve: {
     alias: {
