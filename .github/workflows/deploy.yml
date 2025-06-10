@@ -1,57 +1,41 @@
-name: "on_push_main"
+name: Deploy to GitHub Pages on main push
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 
 permissions:
-  id-token: write
   contents: write
+  id-token: write
 
 jobs:
-  main:
-    runs-on: [ubuntu-latest]
+  deploy:
+    runs-on: ubuntu-latest
     environment: development
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout current repo
+        uses: actions/checkout@v4
 
-      - uses: actions/checkout@v4
-        with:
-          repository: beey-keey/topptee
-          token: ${{ secrets.GH_TOKEN }}
-          path: "./.github"
-          ref: "refs/heads/main"
-
-      - uses: actions/setup-node@v4
-        id: setup-node
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: "20.11.x"
 
-        # BUILD STEP: NPM Install
-      - name: "NPM Install"
+      - name: Install dependencies
         run: npm ci
 
-        # BUILD STEP: Build with Vite
-      - name: "Vite build"
-        run: node --max_old_space_size=4096 ${{ github.workspace }}/node_modules/.bin/vite build --mode development
-
-      # BUILD STEP: Notify Argo about the new image
-      # Checkout the live project so that we can kustomize.
-      - uses: actions/checkout@v4
-        with:
-          repository: beey-keey/teres-fit-app
-          token: ${{ secrets.GH_TOKEN  }}
-          path: "./liveRepoTemp"
-          ref: "refs/heads/main"
+      - name: Build with Vite
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
-          branch: gh-pages # deploy to the main branch
-          folder: dist # replace 'build' with the directory containing the built site
+          branch: gh-pages # target branch
+          folder: dist # output directory (from Vite)
           clean: true
