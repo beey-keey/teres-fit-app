@@ -44,7 +44,7 @@ jobs:
       # Checkout the live project so that we can kustomize.
       - uses: actions/checkout@v4
         with:
-          repository: beey-keey/topptee
+          repository: beey-keey/teres-fit-app
           token: ${{ secrets.GH_TOKEN  }}
           path: "./liveRepoTemp"
           ref: "refs/heads/main"
