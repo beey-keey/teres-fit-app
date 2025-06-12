@@ -1,81 +1,105 @@
-<!-- <template>
-  <div class="home-view p-6 text-center text-2xl">
-    Добре дошли в Teres Fit
-    <p class="mt-2 text-base">Споделяне на личен опит със здравословен режим и нови навици</p>
-  </div>
-</template> -->
-
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-lime-50 to-emerald-100 px-4 py-10 text-gray-800">
-    <div class="mx-auto">
-      <div class="rounded-2xl bg-white p-6 shadow-xl">
-        <h1 class="animate-fade-in mb-4 text-center text-4xl font-extrabold text-green-700">
-          Добре дошли в <span class="text-emerald-500">Teres Fit</span>!
-        </h1>
-        <p class="mb-6 text-center text-lg leading-relaxed">
-          🌱 Споделям моя път към по-добро здраве, стабилна енергия и намаляване на килограмите чрез
-          принципите на
-          <span class="font-semibold text-green-600">глюкозната революция</span>.
-        </p>
+  <div
+    class="min-h-screen bg-gradient-to-br from-lime-50 to-emerald-100 px-4 py-10 text-gray-800"
+  >
+    <div class="mx-auto max-w-5xl space-y-20">
+      <div
+        class="fixed inset-0 z-0 bg-cover bg-center animate-bg-fade pointer-events-none"
+        style="background-image: url(&quot;/background.png&quot;); opacity: 1"
+      ></div>
 
-        <div class="mb-8 flex justify-center">
-          <!-- <img
-            src="/carb-dressing.png"
-            alt="Обличане на въглехидратите"
-            class="animate-fade-in w-full max-w-md rounded-xl border-2 border-green-200 shadow-md"
-          /> -->
-        </div>
+      <section
+        v-for="(card, index) in cards"
+        :key="index"
+        class="group relative h-[500px] w-full overflow-hidden rounded-2xl shadow-xl"
+      >
+        <img
+          :src="card.image"
+          alt="Глюкозната богиня"
+          class="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-700 ease-in-out group-hover:scale-105"
+        />
 
-        <div class="grid grid-cols-1 gap-6 text-center">
-          <div
-            class="rounded-xl bg-green-100 p-4 shadow transition hover:shadow-lg"
-            v-for="(card, index) in cards"
-            :key="index"
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-white/70 via-white/30 to-white/90"
+        ></div>
+
+        <div
+          class="relative z-10 flex h-full w-full flex-col items-center justify-center text-center px-4"
+        >
+          <h1
+            class="text-4xl font-extrabold text-green-700 drop-shadow-md transition-opacity duration-700 group-hover:opacity-90"
           >
-            <h3 class="text-lg font-semibold text-purple-800">{{ card.title }}</h3>
-            <p class="mt-2 text-sm text-gray-500 transition-opacity duration-300">
-              {{ card.description }}
-            </p>
-          </div>
+            {{ card.title }}
+          </h1>
+          <p
+            class="mt-4 max-w-xl text-lg leading-relaxed text-gray-800 drop-shadow-sm transition-opacity duration-700 group-hover:opacity-90"
+          >
+            {{ card.description }}
+          </p>
         </div>
+      </section>
+
+      <!-- ✅ Бутона извън секцията -->
+      <div class="text-center">
+        <a
+          href="/principles"
+          class="inline-block rounded-full bg-emerald-500 px-6 py-3 text-white font-semibold shadow hover:bg-emerald-600 transition"
+        >
+          Разгледай принципите
+        </a>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
 const cards = ref([
   {
-    title: '💡 Oсновна идея и концепция',
-    description: 'Споделяне на личен опит със здравословен режим, без да се дава медицински съвет.',
-    open: false,
+    title: "💡 Основна идея и концепция",
+    description:
+      "Споделяне на личен опит със здравословен режим, без да се дава медицински съвет.",
+    image: "/banner.png",
   },
   {
-    title: '🌱 Каква е целта на сайта?',
-    description: 'Да вдъхновя други хора чрез моя опит.',
-    open: false,
+    title: "🌱 Каква е целта на сайта?",
+    description: "Да вдъхновя други хора чрез моя опит.",
+    image: "/banner2.png",
   },
   {
-    title: '🤸🏻‍♀️ За кого е този сайт?',
-    description: 'За хора, които търсят баланс, вдъхновение и реален пример – не диета.',
-    open: false,
+    title: "🤸🏻‍♀️ За кого е този сайт?",
+    description:
+      "За хора, които търсят баланс, вдъхновение и реален пример – не диета.",
+    image: "/banner3.png",
   },
   {
-    title: '‼️ Какво НЕ е този сайт?',
-    description: 'Това не е медицински блог или диетичен план. Всичко е личен пример.',
-    open: false,
+    title: "‼️ Какво НЕ е този сайт?",
+    description:
+      "Това не е медицински блог или диетичен план. Всичко е личен пример.",
+    image: "/banner4.png",
   },
   {
-    title: '🤩 Какво ще намериш тук?',
-    description: 'Моите дневници, рецепти, хранителни схеми, трикове за баланс и вдъхновение.',
-    open: false,
+    title: "🤩 Какво ще намериш тук?",
+    description:
+      "Моите дневници, рецепти, хранителни схеми, трикове за баланс и вдъхновение.",
+    image: "/banner5.png",
   },
-])
+]);
 
-function toggle(index: number) {
-  cards.value[index].open = !cards.value[index].open
+function generateLeafStyle(index: number) {
+  const left = Math.random() * 100;
+  const top = Math.random() * 100;
+  const delay = 0.3 * index;
+  const size = 40 + Math.random() * 30;
+
+  return {
+    left: `${left}%`,
+    top: `${top}%`,
+    width: `${size}px`,
+    animationDelay: `${delay}s`,
+    transform: "rotate(0deg)",
+  };
 }
 </script>
 
@@ -93,5 +117,23 @@ function toggle(index: number) {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out both;
+}
+
+@keyframes bg-fade {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.animate-bg-fade {
+  animation: bg-fade 10s ease-in-out infinite;
 }
 </style>
