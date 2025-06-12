@@ -5,7 +5,10 @@
     <div class="mx-auto max-w-5xl space-y-20">
       <div
         class="fixed inset-0 z-0 bg-cover bg-center animate-bg-fade pointer-events-none"
-        style="background-image: url(&quot;/background.png&quot;); opacity: 1"
+        style="
+          background-image: url(&quot;/teres-fit-app/background.png&quot;);
+          opacity: 1;
+        "
       ></div>
 
       <section
@@ -60,30 +63,30 @@ const cards = [
     title: "💡 Основна идея и концепция",
     description:
       "Споделяне на личен опит със здравословен режим, без да се дава медицински съвет.",
-    image: "/banner.png",
+    image: "/teres-fit-app//banner.png",
   },
   {
     title: "🌱 Каква е целта на сайта?",
     description: "Да вдъхновя други хора чрез моя опит.",
-    image: "/banner2.png",
+    image: "/teres-fit-app//banner2.png",
   },
   {
     title: "🤸🏻‍♀️ За кого е този сайт?",
     description:
       "За хора, които търсят баланс, вдъхновение и реален пример – не диета.",
-    image: "/banner3.png",
+    image: "/teres-fit-app//banner3.png",
   },
   {
     title: "‼️ Какво НЕ е този сайт?",
     description:
       "Това не е медицински блог или диетичен план. Всичко е личен пример.",
-    image: "/banner4.png",
+    image: "/teres-fit-app//banner4.png",
   },
   {
     title: "🤩 Какво ще намериш тук?",
     description:
       "Моите дневници, рецепти, хранителни схеми, трикове за баланс и вдъхновение.",
-    image: "/banner5.png",
+    image: "/teres-fit-app//banner5.png",
   },
 ];
 
