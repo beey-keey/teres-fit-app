@@ -19,7 +19,7 @@ import Nutrition from "../views/foods/Nutrition.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
+    path: "/home",
     name: "Home",
     component: Home,
   },
