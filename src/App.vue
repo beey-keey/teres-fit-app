@@ -1,9 +1,13 @@
 <template>
   <UApp>
     <NuxtPage />
-    <div class="min-h-screen bg-gradient-to-br from-lime-50 to-emerald-100 text-gray-800">
+    <div
+      class="min-h-screen bg-gradient-to-br from-lime-50 to-emerald-100 text-gray-800"
+    >
       <header class="bg-white shadow-md">
-        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <div
+          class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4"
+        >
           <!-- Logo & Title -->
           <div class="flex items-center space-x-3">
             <img src="/favicon.png" alt="Teres Fit Logo" class="h-8 w-8" />
@@ -17,7 +21,11 @@
               :key="link.path"
               :to="link.path"
               class="text-xl font-semibold hover:underline"
-              :class="$route.path === link.path ? 'text-emerald-600 underline' : 'text-green-800'"
+              :class="
+                $route.path === link.path
+                  ? 'text-emerald-600 underline'
+                  : 'text-green-800'
+              "
             >
               {{ link.label }}
             </router-link>
@@ -47,13 +55,20 @@
         </div>
 
         <!-- Mobile menu -->
-        <div v-if="showMenu" class="space-y-2 px-6 pb-4 text-lg font-semibold md:hidden">
+        <div
+          v-if="showMenu"
+          class="space-y-2 px-6 pb-4 text-lg font-semibold md:hidden"
+        >
           <router-link
             v-for="link in navLinks"
             :key="link.path"
             :to="link.path"
             class="block"
-            :class="$route.path === link.path ? 'text-emerald-600 underline' : 'text-green-800'"
+            :class="
+              $route.path === link.path
+                ? 'text-emerald-600 underline'
+                : 'text-green-800'
+            "
             @click="showMenu = false"
           >
             {{ link.label }}
@@ -62,6 +77,7 @@
       </header>
 
       <main class="p-6">
+        <!-- <LoginScreen v-if="$route.path === '/login'" /> -->
         <router-view />
         <footer class="mt-10 text-center text-sm text-gray-600">
           <p>&copy; 2025 Teres Fit. Създадено с 💚 от Боряна.</p>
@@ -72,28 +88,28 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const showMenu = ref(false)
+const showMenu = ref(false);
 
 const navLinks = [
-  { path: '/', label: 'Начало' },
-  { path: '/me', label: 'За мен' },
-  { path: '/principles', label: 'Принципи' },
-  { path: '/foodGuide', label: 'Хранене' },
-  { path: '/calorieCounter', label: 'Калкулатор' },
-]
+  { path: "/", label: "Начало" },
+  { path: "/me", label: "За мен" },
+  { path: "/principles", label: "Принципи" },
+  { path: "/foodGuide", label: "Хранене" },
+  { path: "/calorieCounter", label: "Калкулатор" },
+];
 
-const activeTab = ref('home')
+const activeTab = ref("home");
 
 // Няма нужда от логика тук, навигацията и рутера вършат работата
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap");
 
 .font-brand {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
 }
 </style>
 
