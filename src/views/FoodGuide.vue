@@ -62,37 +62,37 @@ const foodCards = [
   {
     title: "Протеини",
     description: "Основен градивен елемент за мускулите и ситостта.",
-    image: "/teres-fit-app/protein.png",
+    image: "/protein.png",
     route: "/proteins",
   },
   {
     title: "Мазнини",
     description: "Полезни и незаменими за хормонален баланс и енергия.",
-    image: "/teres-fit-app/fats.png",
+    image: "/fats.png",
     route: "/fats",
   },
   {
     title: "Въглехидрати",
     description: "Източник на енергия – с висок и нисък гликемичен индекс.",
-    image: "/teres-fit-app/carbs.png",
+    image: "/carbs.png",
     route: "/carbs",
   },
   {
     title: "Фибри",
     description: "Засищат, балансират глюкозата и поддържат храносмилането.",
-    image: "/teres-fit-app/fiber.png",
+    image: "/fiber.png",
     route: "/fibers",
   },
   {
     title: "ГИ на храните",
     description: "Гликемичните индекси на храните",
-    image: "/teres-fit-app/glycemic-index-foods.png",
+    image: "/glycemic-index-foods.png",
     route: "/glycemic-index-foods",
   },
   {
     title: "Хранене",
     description: "",
-    image: "/teres-fit-app/nutrition.png",
+    image: "/nutrition.png",
     route: "/nutrition",
   },
 ];

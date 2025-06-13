@@ -45,7 +45,7 @@
           ⚠️ Ключът е в баланса и устойчивия калориен дефицит – не в крайности.
         </p>
         <a
-          href="/teres-fit-app/calorieCounter"
+          href="/calorieCounter"
           class="inline-flex items-center gap-2 rounded-full bg-amber-500 px-5 py-2 text-white font-semibold shadow hover:bg-amber-600 transition"
         >
           📊 Калориен калкулатор
