@@ -41,18 +41,20 @@
 
       <!-- ✅ Бутона извън секцията -->
       <div class="text-center">
-        <a
-          href="principles"
-          class="inline-block rounded-full bg-emerald-500 px-6 py-3 text-white font-semibold shadow hover:bg-emerald-600 transition"
+        <button
+          @click="openPrinciples()"
+          class="mt-6 inline-flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-2 text-white font-semibold shadow hover:bg-emerald-600 transition"
         >
           Разгледай принципите
-        </a>
+          <span class="text-xl">→</span>
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import router from "@/router/router";
 import { ref } from "vue";
 const baseUrl = import.meta.env.BASE_URL;
 
@@ -87,6 +89,10 @@ const cards = [
     image: "/banner5.png",
   },
 ];
+
+const openPrinciples = () => {
+  router.push("/principles");
+};
 
 function generateLeafStyle(index: number) {
   const left = Math.random() * 100;
