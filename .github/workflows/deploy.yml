@@ -33,9 +33,12 @@ jobs:
       - name: Build with Vite
         run: npm run build
 
+      - name: Add CNAME for custom domain
+        run: echo 'www.teres-fit.com' > dist/CNAME
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
-          branch: gh-pages # target branch
-          folder: dist # output directory (from Vite)
+          branch: gh-pages
+          folder: dist
           clean: true
