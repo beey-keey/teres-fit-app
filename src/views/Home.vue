@@ -45,7 +45,7 @@
       <!-- ✅ Бутона извън секцията -->
       <div class="text-center">
         <a
-          href="/teres-fit-app/principles"
+          :href="baseUrl + 'principles'"
           class="inline-block rounded-full bg-emerald-500 px-6 py-3 text-white font-semibold shadow hover:bg-emerald-600 transition"
         >
           Разгледай принципите
@@ -57,6 +57,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+const baseUrl = import.meta.env.BASE_URL;
 
 const cards = [
   {
