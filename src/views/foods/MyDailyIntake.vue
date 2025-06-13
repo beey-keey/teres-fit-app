@@ -44,12 +44,13 @@
         <p class="text-md sm:text-lg text-amber-900 font-semibold mb-4">
           ⚠️ Ключът е в баланса и устойчивия калориен дефицит – не в крайности.
         </p>
-        <a
-          href="/calorieCounter"
-          class="inline-flex items-center gap-2 rounded-full bg-amber-500 px-5 py-2 text-white font-semibold shadow hover:bg-amber-600 transition"
+        <button
+          @click="openCalorieCounter()"
+          class="mt-6 inline-flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-2 text-white font-semibold shadow hover:bg-emerald-600 transition"
         >
           📊 Калориен калкулатор
-        </a>
+          <span class="text-xl">→</span>
+        </button>
       </div>
 
       <!-- 🍽️ Обяд -->
@@ -153,7 +154,13 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import router from "@/router/router";
+
+const openCalorieCounter = () => {
+  router.push("/calorieCounter");
+};
+</script>
 
 <style scoped>
 @keyframes bg-fade {
