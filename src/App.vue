@@ -8,11 +8,7 @@
       >
         <!-- Logo & Title -->
         <div class="flex items-center space-x-3">
-          <img
-            src="/teres-fit-app/favicon.png"
-            alt="Teres Fit Logo"
-            class="h-8 w-8"
-          />
+          <img src="/favicon.png" alt="Teres Fit Logo" class="h-8 w-8" />
           <h1 class="font-brand text-2xl text-emerald-600">Teres Fit</h1>
         </div>
 
@@ -95,10 +91,10 @@ const showMenu = ref(false);
 
 const navLinks = [
   { path: "/", label: "Начало" },
-  { path: "/me", label: "За мен" },
   { path: "/principles", label: "Принципи" },
   { path: "/foodGuide", label: "Хранене" },
   { path: "/calorieCounter", label: "Калкулатор" },
+  { path: "/me", label: "За мен" },
 ];
 
 const activeTab = ref("home");

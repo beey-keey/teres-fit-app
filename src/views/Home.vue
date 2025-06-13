@@ -45,7 +45,7 @@
       <!-- ✅ Бутона извън секцията -->
       <div class="text-center">
         <a
-          href="/principles"
+          href="/teres-fit-app/principles"
           class="inline-block rounded-full bg-emerald-500 px-6 py-3 text-white font-semibold shadow hover:bg-emerald-600 transition"
         >
           Разгледай принципите
